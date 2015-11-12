@@ -1,0 +1,52 @@
+{
+  "name": "sails-service-foursquare",
+  "description": "Service for Sails framework with Foursquare features",
+  "license": "MIT",
+  "main": "lib/index.js",
+  "author": "weyert",
+  "scripts": {
+    "compile": "babel src --out-dir lib",
+    "coveralls": "cat coverage/lcov.info | coveralls",
+    "prepublish": "npm run compile",
+    "semantic-release": "semantic-release pre && npm publish && semantic-release post",
+    "test": "babel-node ./node_modules/.bin/isparta cover _mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/weyert/sails-service-foursquare.git"
+  },
+  "keywords": [
+    "sails",
+    "service",
+    "foursquare"
+  ],
+  "bugs": {
+    "url": "https://github.com/weyert/sails-service-foursquare/issues"
+  },
+  "homepage": "https://github.com/weyert/sails-service-foursquare#readme",
+  "dependencies": {
+    "lodash": "3.10.1",
+    "request": "^2.65.0"
+  },
+  "devDependencies": {
+    "babel": "5.8.29",
+    "chai": "3.4.0",
+    "coveralls": "2.11.4",
+    "cz-conventional-changelog": "1.1.4",
+    "isparta": "3.5.3",
+    "mocha": "2.3.3",
+    "semantic-release": "4.3.5",
+    "sinon": "1.17.2"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
+  "publishConfig": {
+    "tag": "latest"
+  },
+  "release": {
+    "branch": "master"
+  }
+}
